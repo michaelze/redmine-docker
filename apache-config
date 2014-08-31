@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+	ServerName issues.tourenangebot.ch
+	DocumentRoot /usr/local/lib/redmine/public
+
+	<Directory /usr/local/lib/redmine/public>
+		AllowOverride all
+		Options -MultiViews
+	</Directory>
+</VirtualHost>
+

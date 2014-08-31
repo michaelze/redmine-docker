@@ -1,0 +1,7 @@
+production:
+  adapter: mysql
+  database: redmine
+  host: <%= ENV['DB_PORT_3306_TCP_ADDR'] %>
+  port: <%= ENV['DB_PORT_3306_TCP_PORT'] %>
+  username: redmine
+  password: redmine
