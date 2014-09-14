@@ -29,7 +29,8 @@ RUN gem1.8 install rack -v=1.1.6 --no-rdoc --no-ri \
 	&& gem1.8 install rails -v=2.3.14 --no-rdoc --no-ri \
 	&& gem1.8 install rdoc -v=2.4.2 --no-rdoc --no-ri \
 	&& gem1.8 install mysql --no-rdoc --no-ri \
-	&& gem1.8 install rmagick --no-rdoc --no-ri
+	&& gem1.8 install rmagick --no-rdoc --no-ri \
+	&& gem1.8 install json --no-rdoc --no-ri
 
 ADD ./database.yml /usr/local/lib/redmine/config/database.yml
 ADD ./apache-config /etc/apache2/sites-available/default
@@ -42,7 +43,13 @@ RUN mkdir -p files log public/plugin_assets tmp \
 	&& chmod -R 777 public/plugin_assets \
 	&& rake generate_session_store
 
-VOLUME ["/usr/local/lib/redmine/files"]
+WORKDIR /usr/local/lib/redmine/vendor/plugins
+
+RUN git clone https://github.com/koppen/redmine_github_hook.git \
+	&& cd redmine_github_hook \
+	&& git checkout redmine_1.x
+
+VOLUME ["/usr/local/lib/redmine/files", "/var/redmine"]
 
 EXPOSE 80
 
