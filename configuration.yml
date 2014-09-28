@@ -1,0 +1,7 @@
+production:
+  email_delivery:
+    delivery_method: :smtp
+    smtp_settings:
+      address: 'mail.climbit.ch'
+      domain: 'climbit.ch'
+      port: 25

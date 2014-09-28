@@ -32,8 +32,9 @@ RUN gem1.8 install rack -v=1.1.6 --no-rdoc --no-ri \
 	&& gem1.8 install rmagick --no-rdoc --no-ri \
 	&& gem1.8 install json --no-rdoc --no-ri
 
-ADD ./database.yml /usr/local/lib/redmine/config/database.yml
-ADD ./apache-config /etc/apache2/sites-available/default
+ADD database.yml /usr/local/lib/redmine/config/database.yml
+ADD configuration.yml /usr/local/lib/redmine/config/configuration.yml
+ADD apache-config /etc/apache2/sites-available/default
 
 WORKDIR /usr/local/lib/redmine
 
