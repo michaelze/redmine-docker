@@ -30,7 +30,7 @@ RUN gem1.8 install rack -v=1.1.6 --no-rdoc --no-ri \
 	&& gem1.8 install rdoc -v=2.4.2 --no-rdoc --no-ri \
 	&& gem1.8 install mysql --no-rdoc --no-ri \
 	&& gem1.8 install rmagick --no-rdoc --no-ri \
-	&& gem1.8 install json --no-rdoc --no-ri
+	&& gem1.8 install json -v 1.8.6 --no-rdoc --no-ri
 
 ADD database.yml /usr/local/lib/redmine/config/database.yml
 ADD configuration.yml /usr/local/lib/redmine/config/configuration.yml
