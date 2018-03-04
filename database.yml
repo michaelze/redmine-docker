@@ -1,8 +1,8 @@
 production:
   adapter: mysql
   database: <%= ENV['DB_NAME'] %>
-  host: <%= ENV['DB_PORT_3306_TCP_ADDR'] %>
-  port: <%= ENV['DB_PORT_3306_TCP_PORT'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   encoding: utf8
